@@ -1,13 +1,13 @@
 from rest_framework import generics
-from .serializers import ThingSerializer
-from apis.models import api
+from .serializers import ApiSerializer
+from apis.models import Api
 
 
-class ThingsListAPIView(generics.ListCreateAPIView):
-    queryset = api.objects.all()
-    serializer_class = ThingSerializer
+class ApisListAPIView(generics.ListCreateAPIView):
+    queryset = Api.objects.all()
+    serializer_class = ApiSerializer
 
 
-class ThingsDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = api.objects.all()
-    serializer_class = ThingSerializer
+class ApisDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Api.objects.all()
+    serializer_class = ApiSerializer

@@ -1,16 +1,16 @@
 from django.test import TestCase
-from .models import Thing
+from .models import Api
 
 # Testing the model
-class ThingTests(TestCase):
+class ApiTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        testthing = Thing.objects.create(title = "test_thing", description="Testing thing")
-        testthing.save()
+        testapi = Api.objects.create(title = "test_api", description="Testing api")
+        testapi.save()
 
 
-    def test_things_model(self):
-        thing = Thing.objects.get(id=1)
-        actual_title = thing.title
-        self.assertEqual(actual_title, "test_thing")
+    def test_apis_model(self):
+        api = Api.objects.get(id=1)
+        actual_title = api.title
+        self.assertEqual(actual_title, "test_api")
